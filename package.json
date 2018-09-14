@@ -1,0 +1,16 @@
+{
+  "name": "learn_webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "Usheninte",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0"
+  }
+}
