@@ -1,1 +1,9 @@
-console.log('Hi from Webpack');
+// import './css/main.css';
+// import './scss/main.scss';
+
+import { hello, sup } from './js/module';
+
+hello();
+sup();
+
+console.log('Webpack watch is working!');
