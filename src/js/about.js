@@ -1,1 +1,1 @@
-console.log('Hello from about.js');
+console.log('Hello from about.js. ARTIS!');
