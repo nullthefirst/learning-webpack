@@ -1,9 +1,10 @@
 // import './css/main.css';
-// import './scss/main.scss';
+import './scss/main.scss';
 
-import { hello, sup } from './js/module';
+import { hello } from './js/hello';
+import { sup } from './js/sup';
 
 hello();
 sup();
 
-console.log('Webpack watch is working!');
+console.log('Webpack is working!');
