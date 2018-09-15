@@ -49,7 +49,14 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new ExtractTextPlugin('styles.css'),
     new HtmlWebpackPlugin({
-      title: 'Multiple Bundles!'
+      filename: 'index.html',
+      template: 'src/views/index.html',
+      chunks: ['app']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'about.html',
+      template: 'src/views/about.html',
+      chunks: ['about']
     }),
     new BrowserSyncPlugin(
       // BrowserSync options
@@ -60,7 +67,7 @@ module.exports = {
         // proxy the Webpack Dev Server endpoint
         // (which should be serving on http://localhost:3100/)
         // through BrowserSync
-        proxy: 'http://localhost:3100/'
+        proxy: 'http://localhost:8080/'
       },
       // plugin options
       {
