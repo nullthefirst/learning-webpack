@@ -1,10 +1,14 @@
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    app: './src/index.js',
+    about: './src/js/about.js'
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   devtool: 'inline-source-map',
@@ -21,7 +25,10 @@ module.exports = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
+          use: [
+            {loader: 'css-loader', options: {sourceMap: true}},
+            {loader: 'sass-loader', options: {sourceMap: true}}
+          ]
         })
       },
       {
@@ -32,6 +39,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('styles.css')
+    new ExtractTextPlugin('styles.css'),
+    new HtmlWebpackPlugin({
+      title: 'Multiple Bundles!'
+    })
   ]
 };
